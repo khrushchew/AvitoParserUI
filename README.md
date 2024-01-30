@@ -1,1 +1,1 @@
-# OzonParserUI
+# AvitoParserUI

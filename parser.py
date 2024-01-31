@@ -20,3 +20,5 @@ soup = BeautifulSoup(src, "lxml")
 sort_items = soup.find_all("fieldset")
 
 sort_dict = {i.find("label").text: [j.text for j in i.find_all("option")] for i in sort_items}
+
+

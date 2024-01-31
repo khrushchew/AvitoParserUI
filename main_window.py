@@ -1,4 +1,5 @@
-from parser import take_for_sort_box
+from parser import sort_dict
+
 
 #lib import
 from tkinter import *
@@ -15,12 +16,13 @@ window["background"] = "#CCCCCC"
 
 #find_entry
 find_entry = Entry(background="#FFFFFF",
-                   foreground="white",
+                   foreground="black",
                    font=("Consolas", 16))
 find_entry.pack(anchor=CENTER, padx=6, pady=6)
 
 #sort_combobox
-sort_box = Combobox(values=take_for_sort_box())
-
-
+for value in sort_dict.values():
+    if len(value) > 0:
+        sort_box = Combobox(textvariable=StringVar(value=value[0]), values=value, state="readonly")
+        sort_box.pack(anchor=NW, padx=6, pady=6)
 window.mainloop()
